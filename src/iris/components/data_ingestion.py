@@ -6,4 +6,4 @@ class DataIngestion:
     
     def download_data(self,config:DataIngestionConfig):
         data = pd.read_csv(config.source_file)
-        data.to_csv(config.raw_data_file_path)
+        data.to_csv(config.raw_data_file_path,index=False)
