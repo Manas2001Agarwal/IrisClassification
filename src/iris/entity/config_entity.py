@@ -17,3 +17,10 @@ class DataValidationConfig:
     source_file: Path
     schema: dict
     
+@dataclass
+class DataTransformationConfig:
+    root_dir: Path
+    source_file: Path
+    test_file_name: Path
+    train_file_name: Path
+    preprocessor_file_path: Path

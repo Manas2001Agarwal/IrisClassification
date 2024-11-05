@@ -3,6 +3,7 @@ import sys
 from src.iris.components.data_ingestion import DataIngestion
 from src.iris.config.configuration import ConfigurationEntity
 from src.iris.components.data_validation import DataValidation
+from src.iris.components.data_transformation import DataTransformation
 
 
 if __name__ == "__main__":
@@ -15,3 +16,7 @@ if __name__ == "__main__":
     data_validation_config = configuration_manager.get_data_validation_config()
     data_validation = DataValidation()
     data_validation.validate(data_validation_config)
+    
+    data_transformation_config = configuration_manager.get_data_transformation_config()
+    data_transformation = DataTransformation()
+    data_transformation.transform_data(data_transformation_config)
