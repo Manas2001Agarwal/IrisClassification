@@ -20,7 +20,7 @@ class DataTransformation:
         
         train,test = train_test_split(data,test_size=0.2,random_state=42)
         
-        os.makedirs(os.path.dirname(config.train_file_name))
+        os.makedirs(os.path.dirname(config.train_file_name),exist_ok=True)
         
         train.to_csv(config.train_file_name,index=False)
         test.to_csv(config.test_file_name,index=False)

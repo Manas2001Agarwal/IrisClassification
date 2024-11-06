@@ -4,7 +4,8 @@ import yaml
 from pathlib import Path
 from src.iris.entity.config_entity import (DataIngestionConfig,
                                            DataValidationConfig,
-                                           DataTransformationConfig)
+                                           DataTransformationConfig,
+                                           ModelTrainerConfig)
 from src.iris.utils.common import read_yaml
 from src.iris.constants import (CONFIG_FILE_PATH,
                                 PARAMS_FILE_PATH,
@@ -49,6 +50,18 @@ class ConfigurationEntity:
             test_file_name=config.test_file_name,
             train_file_name=config.train_file_name,
             preprocessor_file_path=config.preprocessor_file_path
+        )
+    
+    def get_model_trainer_config(self):
+        config = self.config.model_trainer
+        os.makedirs(config.root_dir,exist_ok=True)
+        
+        return ModelTrainerConfig(
+            root_dir = config.root_dir,
+            source_test_file=config.source_test_file,
+            source_train_file=config.source_train_file,
+            model_file_path=config.model_file_path,
+            params = self.params.RandomForest
         )
         
         

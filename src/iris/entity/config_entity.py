@@ -24,3 +24,11 @@ class DataTransformationConfig:
     test_file_name: Path
     train_file_name: Path
     preprocessor_file_path: Path
+    
+@dataclass
+class ModelTrainerConfig:
+    root_dir: Path
+    source_train_file: Path
+    source_test_file: Path
+    model_file_path: Path
+    params: dict
