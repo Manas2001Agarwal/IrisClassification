@@ -3,8 +3,19 @@ from src.iris.pipeline.prediction_pipeline import Prediction_Pipeline
 import streamlit as st
 import numpy as np
 from box import ConfigBox
+import pandas as pd
+from typing import Dict
+train = Training_Pipeline()
 
 st.title('Iris Classification')
+st.write("Click the Train button to start training")
+
+if st.button("Train"):
+   accu,report = train.run_training_pipeline() 
+#    report_df = pd.DataFrame(report).transpose()
+   st.write("Here are Classification Accuracy on Test Data after Training")
+   st.write(f"#### {accu}")
+
 st.write('Enter the values for prediction:')
 
 feature1 = st.text_input("Sepal-Length")
