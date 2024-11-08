@@ -4,5 +4,6 @@ scikit-learn
 mlflow
 dagshub
 python-box
+streamlit
 
 #-e .

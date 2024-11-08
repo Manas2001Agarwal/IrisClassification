@@ -2,7 +2,7 @@ from dataclasses import dataclass
 import os
 import sys
 from pathlib import Path
-from box import ConfigBox
+#from box import config_box
 
 @dataclass
 class DataIngestionConfig:
