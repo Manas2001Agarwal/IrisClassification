@@ -24,5 +24,5 @@ if st.button('Predict'):
     input_data = np.array([feature1, feature2, feature3, feature4])
     input_data = input_data.reshape(1,-1)
     prediction = pred.prediction(input_data)
-    st.write(prediction)
+    st.write(f"#### {prediction[0]}")
     
