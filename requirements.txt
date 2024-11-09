@@ -5,5 +5,5 @@ mlflow
 dagshub
 python-box
 streamlit
-
+dotmap
 #-e .
